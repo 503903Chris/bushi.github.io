@@ -1,1 +1,36 @@
-# bushi
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        .text {
+            font-size: 100px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            animation: rainbow 0.3s infinite linear;
+        }
+
+        @keyframes rainbow {
+            0%   { color: red; }
+            14%  { color: orange; }
+            28%  { color: yellow; }
+            42%  { color: lime; }
+            57%  { color: cyan; }
+            71%  { color: blue; }
+            85%  { color: purple; }
+            100% { color: red; }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">此地adam三百斤</div>
+</body>
+</html>
