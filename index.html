@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rainbow Text</title>
+<title>Shiny Text</title>
 
 <style>
 body {
@@ -13,28 +13,50 @@ body {
     justify-content: center;
     align-items: center;
     background: black;
+    overflow: hidden;
 }
 
 .rainbow-text {
-    font-size: 70px;
-    font-weight: bold;
+    font-size: 80px;
+    font-weight: 900;
     font-family: Arial Black, sans-serif;
+    text-transform: uppercase;
 
     background: linear-gradient(
         90deg,
-        red, orange, yellow, green, blue, indigo, violet, red
+        red, yellow, lime, cyan, blue, magenta, red
     );
 
-    background-size: 400%;
+    background-size: 500%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: shine 3s linear infinite;
+    animation: shineMove 0.8s linear infinite,
+               glowPulse 0.4s ease-in-out infinite alternate;
+
+    filter: drop-shadow(0 0 10px white)
+            drop-shadow(0 0 25px cyan)
+            drop-shadow(0 0 40px magenta);
 }
 
-@keyframes shine {
+@keyframes shineMove {
     0% { background-position: 0% }
     100% { background-position: 100% }
+}
+
+@keyframes glowPulse {
+    0% {
+        filter: drop-shadow(0 0 5px white)
+                drop-shadow(0 0 15px cyan)
+                drop-shadow(0 0 25px magenta);
+        transform: scale(1);
+    }
+    100% {
+        filter: drop-shadow(0 0 20px white)
+                drop-shadow(0 0 50px cyan)
+                drop-shadow(0 0 80px magenta);
+        transform: scale(1.05);
+    }
 }
 </style>
 
